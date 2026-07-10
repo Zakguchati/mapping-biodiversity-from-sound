@@ -1,0 +1,29 @@
+# Core
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# Audio
+librosa
+soundfile
+
+# Deep learning (CNN + EfficientNet + Grad-CAM)
+torch
+torchvision
+timm
+grad-cam
+
+# Spatial
+geopandas
+folium
+
+# App
+streamlit
+
+# Utilities
+tqdm
+
+# Note: on Kaggle most of the above are preinstalled. This file is mainly for
+# local and Colab environments.
