@@ -30,10 +30,10 @@ with st.sidebar:
     )
     st.subheader("Map legend")
     st.markdown(
-        "- **green** — model estimate reasonably reliable\n"
-        "- **red** — model under-counts (rich sites)\n"
-        "- **purple** — model over-counts (sparse sites)\n"
-        "- **circle size** — true diversity"
+        "- **green** - model estimate reasonably reliable\n"
+        "- **red** - model under-counts (rich sites)\n"
+        "- **purple** - model over-counts (sparse sites)\n"
+        "- **circle size** - true diversity"
     )
     st.caption("MSc Individual Project, COMP1885")
 
@@ -114,6 +114,7 @@ with tab_div:
         'rarefied_pred': 'Predicted richness (equal effort)',
     })
     st.dataframe(rare, width='stretch', hide_index=True)
+    st.image(str(REPORTS / 'diversity_ci.png'), width='stretch')   
 
 with tab_time:
     st.subheader("Diversity by time of day")
@@ -122,6 +123,7 @@ with tab_time:
         "Across sites the comparison is confounded, since most recorders ran at a single period."
     )
     st.image(str(REPORTS / 'temporal_heatmap.png'), width='stretch')
+   
 
 with tab_space:
     st.subheader("North-south pattern")
