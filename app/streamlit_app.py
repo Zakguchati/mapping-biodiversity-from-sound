@@ -71,7 +71,8 @@ with tab_map:
 
     center = [np.mean([c[0] for c in coords.values()]),
               np.mean([c[1] for c in coords.values()])]
-    m = folium.Map(location=center, zoom_start=7, tiles='CartoDB positron')
+    m = folium.Map(location=center, zoom_start=7, tiles='OpenStreetMap')
+    m.fit_bounds([[-21.8, -58.0], [-16.3, -55.5]])
 
     for s in sorted(set(sites_arr)):
         idx = np.where(sites_arr == s)[0]
@@ -83,7 +84,7 @@ with tab_map:
             location=[lat, lon],
             radius=6 + tr * 1.5,
             popup=f"<b>{s}</b><br>true: {tr}<br>detected: {pr}<br>gap: {gap}",
-            color=colour(gap), fill=True, fill_opacity=0.7,
+            color="white", weight=1, fill_color=colour(gap), fill_opacity=0.55,
         ).add_to(m)
 
     with st.container(border=True):
